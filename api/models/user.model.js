@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
+<<<<<<< HEAD
+=======
+    _id: mongoose.Schema.Types.ObjectId,
+>>>>>>> cf642f6 (create user model)
     username: {
         type: String,
         required: true,
@@ -11,10 +15,14 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+<<<<<<< HEAD
     password:{
         type: String,
         required: true
     }
+=======
+    password: {type: String, required: true}
+>>>>>>> cf642f6 (create user model)
 }, {
     timestamps: true
 }
