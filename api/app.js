@@ -36,12 +36,19 @@ app.use((req, res, next) => {
     error.status = 400;
     next(error);
 });
+
 app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-        message: error.message
+    const statusCode = error.statusCode || 500;
+    const message = error.message || 'Internal Server Error';
+
+    return res.status(statusCode).json({
+        success:false,
+        statusCode,
+        message,
+
     });
 });
+
 
 
 export default app;
